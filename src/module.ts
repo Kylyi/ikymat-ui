@@ -5,15 +5,14 @@ import {
   installModule,
   addComponentsDir,
 } from "@nuxt/kit";
-import { name, version } from "../package.json";
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {}
-console.log(name);
+
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name,
-    version,
+    name: "ikymat-ui",
+    version: "1.0.0",
     configKey: "ikymat-ui",
     compatibility: {
       nuxt: "^3.0.0-rc.8",
@@ -42,6 +41,6 @@ export default defineNuxtModule<ModuleOptions>({
     });
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve("./runtime/plugin"));
+    //addPlugin(resolver.resolve("./runtime/plugin"));
   },
 });
