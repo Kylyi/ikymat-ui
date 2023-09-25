@@ -29,25 +29,25 @@ My new Nuxt module for doing amazing things.
 
 ## Quick Setup
 
-1. Add `my-module` dependency to your project
+1. Add `ikymat-ui` dependency to your project
 
 ```bash
 # Using pnpm
-pnpm add -D my-module
+pnpm add -D ikymat-ui
 
 # Using yarn
-yarn add --dev my-module
+yarn add --dev ikymat-ui
 
 # Using npm
-npm install --save-dev my-module
+npm install --save-dev ikymat-ui
 ```
 
-2. Add `my-module` to the `modules` section of `nuxt.config.ts`
+2. Add `ikymat-ui` to the `modules` section of `nuxt.config.ts`
 
 ```js
 export default defineNuxtConfig({
   modules: [
-    'my-module'
+    'ikymat-ui'
   ]
 })
 ```
