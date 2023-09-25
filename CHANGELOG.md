@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.1
+
+[compare changes](https://github.com/Kylyi/ikymat-ui/compare/v1.0.4...v0.0.1)
+
+### 🏡 Chore
+
+- **release:** V1.0.4 ([51a1417](https://github.com/Kylyi/ikymat-ui/commit/51a1417))
+
+### ❤️ Contributors
+
+- Ahmed Taha <ahmadhamidty@gmail.com>
+
 ## v1.0.4
 
 [compare changes](https://github.com/Kylyi/ikymat-ui/compare/v1.0.3...v1.0.4)
