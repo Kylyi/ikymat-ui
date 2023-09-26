@@ -22,7 +22,7 @@ export const vRipple: Directive = {
       return
     }
 
-    (el as HTMLElement).addEventListener('click', ev => {
+    ;(el as HTMLElement).addEventListener('click', ev => {
       const rippleContainerEl = document.createElement('span')
       const rippleEl = document.createElement('span')
       const rippleAttributes = getRippleAttributes(ev)

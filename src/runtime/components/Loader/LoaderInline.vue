@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Added
-import { computedEager } from '@vueuse/core';
+import { computedEager } from '@vueuse/core'
 
 type IProps = {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | number

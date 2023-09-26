@@ -31,8 +31,8 @@ defineEmits<{
     relative w-9 h-9;
 
   &-wrapper {
-    --apply: p-0 self-center rounded-2 w-10 h-10 flex flex-center
-      hover:bg-true-gray/20;
+    --apply: p-0 self-center rounded-2 w-10 h-10 flex flex-center hover:
+      bg-true-gray/20;
   }
 
   span {

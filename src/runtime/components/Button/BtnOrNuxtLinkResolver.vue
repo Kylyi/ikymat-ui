@@ -6,36 +6,34 @@
 // Probably Nuxt bug
 
 // Types
-import type { IBtnNavigationProps } from "../Button/types/btn-props.type.ts";
+import type { IBtnNavigationProps } from '../Button/types/btn-props.type.ts'
 
 // Added
-import { useRoute } from "#imports";
-import { computedEager } from "@vueuse/core";
+import { useRoute } from '#imports'
+import { computedEager } from '@vueuse/core'
 
-
-
-const props = defineProps<IBtnNavigationProps>();
+const props = defineProps<IBtnNavigationProps>()
 
 // UTILS
-const route = useRoute();
+const route = useRoute()
 
 const toPathString = computedEager(() => {
-  const to = props.to;
+  const to = props.to
 
-  if (typeof to === "string") {
-    return to;
+  if (typeof to === 'string') {
+    return to
   }
 
-  if (typeof to === "object" && "path" in to) {
-    return to.path;
+  if (typeof to === 'object' && 'path' in to) {
+    return to.path
   }
 
-  return "";
-});
+  return ''
+})
 
 const currentPath = computedEager(() => {
-  return route.path;
-});
+  return route.path
+})
 </script>
 
 <template>
@@ -53,7 +51,11 @@ const currentPath = computedEager(() => {
     <slot />
   </NuxtLink>
 
-  <button v-else :type="type" :disabled="disabled">
+  <button
+    v-else
+    :type="type"
+    :disabled="disabled"
+  >
     <slot />
   </button>
 </template>

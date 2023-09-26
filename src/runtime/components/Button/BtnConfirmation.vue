@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Added
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 type IProps = {
   modelValue?: boolean
@@ -50,9 +50,8 @@ defineExpose({
 
 <style lang="scss" scoped>
 .tooltip {
-  --apply: bg-white dark:bg-darker absolute pointer-events-none
-    rounded-custom p-x-2 text-sm tracking-wide z-10 h-full
-    flex flex-center;
+  --apply: bg-white dark: bg-darker absolute pointer-events-none rounded-custom
+    p-x-2 text-sm tracking-wide z-10 h-full flex flex-center;
 
   &--left {
     --apply: -left-12px translate-x--100% top-0;

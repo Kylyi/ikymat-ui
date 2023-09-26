@@ -1,69 +1,69 @@
 <script setup lang="ts">
 // TYPES
-import type { IBtnProps } from "../Button/types/btn-props.type";
+import type { IBtnProps } from '../Button/types/btn-props.type'
 
 // COMPONENTS
-import BtnOrNuxtLinkResolver from "../Button/BtnOrNuxtLinkResolver.vue";
+import BtnOrNuxtLinkResolver from '../Button/BtnOrNuxtLinkResolver.vue'
 
 // CONSTANTS
-import { BUTTON_PRESET } from "../Button/constants/button-preset.constant";
+import { BUTTON_PRESET } from '../Button/constants/button-preset.constant'
 
 // DIRECTIVES
-import { vRipple } from "../../directives/ripple";
+import { vRipple } from '../../directives/ripple'
 
 // Added
-import { useSlots, ref, computed } from "vue";
-import { reactivePick, computedEager } from "@vueuse/core";
+import { useSlots, ref, computed } from 'vue'
+import { reactivePick, computedEager } from '@vueuse/core'
 
 const props = withDefaults(defineProps<IBtnProps>(), {
-  align: "center",
+  align: 'center',
   rounded: true,
-  disableStyle: "filled",
+  disableStyle: 'filled',
   ripple: true,
-  size: "md",
-  type: "button",
-});
+  size: 'md',
+  type: 'button',
+})
 
 const btnProps = reactivePick(props, [
-  "external",
-  "noActiveLink",
-  "to",
-  "type",
-  "disabled",
-  "download",
-  "exact",
-]);
+  'external',
+  'noActiveLink',
+  'to',
+  'type',
+  'disabled',
+  'download',
+  'exact',
+])
 
 // LAYOUT
-const slots = useSlots();
-const component = ref<InstanceType<typeof BtnOrNuxtLinkResolver>>();
+const slots = useSlots()
+const component = ref<InstanceType<typeof BtnOrNuxtLinkResolver>>()
 const preset = computed(() =>
   props.preset ? BUTTON_PRESET[props.preset] : null
-);
+)
 
 const btnClass = computedEager(() => {
   return [
     `btn--${props.size}`,
-    { "is-stacked": props.stacked },
-    { "is-dimmed": !props.noDim },
-    { "is-round": props.round },
-    { "is-rounded": props.rounded && !props.round },
-    { "is-outlined": props.outlined },
-    { "is-bold": !props.noBold },
+    { 'is-stacked': props.stacked },
+    { 'is-dimmed': !props.noDim },
+    { 'is-round': props.round },
+    { 'is-rounded': props.rounded && !props.round },
+    { 'is-outlined': props.outlined },
+    { 'is-bold': !props.noBold },
     { [`is-disabled is-disabled--${props.disableStyle}`]: props.disabled },
-    { "has-label": props.label || slots.label },
-    { "has-icon": props.icon || preset.value?.icon || slots.icon },
-    { "is-center": props.align === "center" },
-    { "is-left": props.align === "left" },
-    { "is-right": props.align === "right" },
-    { "is-uppercase": !props.noUppercase },
+    { 'has-label': props.label || slots.label },
+    { 'has-icon': props.icon || preset.value?.icon || slots.icon },
+    { 'is-center': props.align === 'center' },
+    { 'is-left': props.align === 'left' },
+    { 'is-right': props.align === 'right' },
+    { 'is-uppercase': !props.noUppercase },
     ...(preset.value?.color ? [preset.value.color] : []),
-  ];
-});
+  ]
+})
 
 defineExpose({
   getElement: () => component.value,
-});
+})
 </script>
 
 <template>
@@ -77,7 +77,11 @@ defineExpose({
     :class="btnClass"
   >
     <slot name="icon">
-      <div v-if="icon || preset" class="icon" :class="[icon || preset?.icon]" />
+      <div
+        v-if="icon || preset"
+        class="icon"
+        :class="[icon || preset?.icon]"
+      />
     </slot>
 
     <slot name="label">
@@ -92,7 +96,11 @@ defineExpose({
 
     <slot />
 
-    <div v-if="loading" class="loading" @click.stop.prevent>
+    <div
+      v-if="loading"
+      class="loading"
+      @click.stop.prevent
+    >
       <Loader
         :type="loaderType || (label ? 'inline' : 'block')"
         :color="loadingColor"
@@ -101,7 +109,11 @@ defineExpose({
     </div>
 
     <!-- Hover focus helper -->
-    <span v-if="!noHoverEffect" class="focus-helper" tabindex="-1" />
+    <span
+      v-if="!noHoverEffect"
+      class="focus-helper"
+      tabindex="-1"
+    />
   </BtnOrNuxtLinkResolver>
 </template>
 
@@ -110,8 +122,7 @@ defineExpose({
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 
-  --apply: flex items-center tracking-wide relative
-    cursor-pointer select-none;
+  --apply: flex items-center tracking-wide relative cursor-pointer select-none;
 
   &.is-uppercase {
     --apply: uppercase;
@@ -162,7 +173,7 @@ defineExpose({
   }
 
   &.is-dimmed {
-    --apply: opacity-80 hover:opacity-100;
+    --apply: opacity-80 hover: opacity-100;
   }
 
   &.is-round {
@@ -185,12 +196,12 @@ defineExpose({
     }
 
     &--flat {
-      --apply: "!bg-transparent";
+      --apply: '!bg-transparent';
     }
   }
 
   &.is-outlined {
-    --apply: dark:bg-darker bg-white border-solid border-2 border-current;
+    --apply: dark: bg-darker bg-white border-solid border-2 border-current;
   }
 
   &--xs {
@@ -267,8 +278,8 @@ defineExpose({
 }
 
 .focus-helper {
-  --apply: absolute fit z-3
-    cursor-pointer rounded-inherit inset-0 pointer-events-none;
+  --apply: absolute fit z-3 cursor-pointer rounded-inherit inset-0
+    pointer-events-none;
 }
 
 .btn:hover .focus-helper {
@@ -276,7 +287,7 @@ defineExpose({
 }
 
 .loading {
-  --apply: absolute flex flex-center fit top-0 left-0 z-4 bg-white dark:bg-dark
+  --apply: absolute flex flex-center fit top-0 left-0 z-4 bg-white dark: bg-dark
     opacity-95 rounded-inherit cursor-wait;
 }
 </style>

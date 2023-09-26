@@ -1,38 +1,38 @@
 <script setup lang="ts">
 // Types
-import { IBtnProps } from "../Button/types/btn-props.type";
+import { IBtnProps } from '../Button/types/btn-props.type'
 
 // Added
-import { useClipboard } from "@vueuse/core";
-import { computed } from "#imports";
+import { useClipboard } from '@vueuse/core'
+import { computed } from '#imports'
 
 const props = defineProps<
   IBtnProps & {
-    modelValue?: any;
-    position?: "left" | "right" | "top" | "bottom";
+    modelValue?: any
+    position?: 'left' | 'right' | 'top' | 'bottom'
   }
->();
+>()
 
 // COPY
-const { copy, copied, isSupported } = useClipboard({ copiedDuring: 2000 });
+const { copy, copied, isSupported } = useClipboard({ copiedDuring: 2000 })
 
 const copyBtnSize = computed(() => {
   switch (props.size) {
-    case "xs":
-      return "xs";
-    case "sm":
-      return "xs";
-    case "md":
-      return "sm";
-    case "lg":
-      return "md";
-    case "auto":
-      return "auto";
+    case 'xs':
+      return 'xs'
+    case 'sm':
+      return 'xs'
+    case 'md':
+      return 'sm'
+    case 'lg':
+      return 'md'
+    case 'auto':
+      return 'auto'
   }
-});
+})
 
 function handleCopy() {
-  copy(String(props.modelValue));
+  copy(String(props.modelValue))
 }
 </script>
 
@@ -53,8 +53,15 @@ function handleCopy() {
     @click="handleCopy"
   >
     <template #icon>
-      <div v-if="!copied" bx:copy class="icon" />
-      <Checkmark v-else class="icon" />
+      <div
+        v-if="!copied"
+        bx:copy
+        class="icon"
+      />
+      <Checkmark
+        v-else
+        class="icon"
+      />
     </template>
 
     <BtnConfirmation
