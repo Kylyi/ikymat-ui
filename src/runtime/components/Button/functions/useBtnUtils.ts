@@ -1,6 +1,6 @@
 // TYPES
-import { reactivePick } from '#imports'
 import type { IBtnProps } from '../types/btn-props.type'
+import { reactivePick } from '#imports'
 
 export function useBtnUtils() {
   function getBtnProps(props: IBtnProps) {

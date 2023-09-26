@@ -15,7 +15,7 @@ import presetIkymat from '@ikymat/unocss-preset'
 import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 
 // BREAKPOINTS
-//import { BREAKPOINTS_PX } from './libs/App/constants/breakpoints.constant'
+// import { BREAKPOINTS_PX } from './libs/App/constants/breakpoints.constant'
 
 export default defineConfig({
   theme: {
@@ -32,7 +32,7 @@ export default defineConfig({
     boxShadow: {
       consistent: '0px 0px 12px 8px rgba(0, 0, 0, 0.05)',
     },
-    //breakpoints: BREAKPOINTS_PX,
+    // breakpoints: BREAKPOINTS_PX,
     font: {
       size: {
         '2xs': '0.625rem',

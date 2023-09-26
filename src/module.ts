@@ -24,6 +24,7 @@ export default defineNuxtModule<ModuleOptions>({
   // Shorthand sugar to register Nuxt hooks
   hooks: {},
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
@@ -61,6 +62,6 @@ export default defineNuxtModule<ModuleOptions>({
     ]
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    //addPlugin(resolver.resolve("./runtime/plugin"));
+    // addPlugin(resolver.resolve("./runtime/plugin"));
   },
 })

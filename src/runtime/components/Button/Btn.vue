@@ -1,5 +1,9 @@
 <script setup lang="ts">
 // TYPES
+import { reactivePick, computedEager } from '@vueuse/core'
+import { useSlots, ref, computed } from 'vue'
+
+// Added
 import type { IBtnProps } from '../Button/types/btn-props.type'
 
 // COMPONENTS
@@ -10,10 +14,6 @@ import { BUTTON_PRESET } from '../Button/constants/button-preset.constant'
 
 // DIRECTIVES
 import { vRipple } from '../../directives/ripple'
-
-// Added
-import { useSlots, ref, computed } from 'vue'
-import { reactivePick, computedEager } from '@vueuse/core'
 
 const props = withDefaults(defineProps<IBtnProps>(), {
   align: 'center',

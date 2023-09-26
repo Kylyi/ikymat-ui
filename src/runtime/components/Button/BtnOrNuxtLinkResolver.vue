@@ -4,13 +4,12 @@
 // approach to create the component but for some reason, once `NuxtLink` is
 // imported, imports in the parent component (<Btn />) of preset get broken
 // Probably Nuxt bug
+// Added
+import { computedEager } from '@vueuse/core'
+import { useRoute } from '#imports'
 
 // Types
 import type { IBtnNavigationProps } from '../Button/types/btn-props.type.ts'
-
-// Added
-import { useRoute } from '#imports'
-import { computedEager } from '@vueuse/core'
 
 const props = defineProps<IBtnNavigationProps>()
 

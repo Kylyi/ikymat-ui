@@ -8,11 +8,7 @@ module.exports = {
   parserOptions: {
     parser: '@typescript-eslint/parser',
   },
-  extends: [
-    '@antfu',
-    '@nuxtjs/eslint-config-typescript',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['@nuxtjs/eslint-config-typescript', 'plugin:prettier/recommended'],
   // "overrides": [
   //   {
   //     "files": [
