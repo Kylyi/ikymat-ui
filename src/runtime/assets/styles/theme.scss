@@ -1,6 +1,6 @@
 :root {
   // General
-  --contrast-color: theme('colors.darker');
+  --contrast-color: #121212;
 
   &.dark {
     --contrast-color: theme('colors.white');
@@ -10,12 +10,12 @@
   // Collapse
   --Collapse-header-bg: theme('colors.blue.50');
   --Collapse-header-title-color: unset;
-  --Collapse-dropdown-icon-color: theme('colors.primary');
+  --Collapse-dropdown-icon-color: #0C4076;
 
   &.dark {
     --Collapse-header-bg: theme('colors.gray.900');
     --Collapse-header-title-color: unset;
-    --Collapse-dropdown-icon-color: theme('colors.primary');
+    --Collapse-dropdown-icon-color: #0C4076;
   }
 
   //MiniCard (InputBlock)
@@ -24,7 +24,7 @@
   --MiniCard-value-font-size: theme('font.size.md');
   --MiniCard-value-font-weight: 500;
   --MiniCard-icon-color: theme('colors.blue.500');
-  
+
   &.dark {
     --MiniCard-label-color: theme('colors.slate.300');
     --MiniCard-icon-color: theme('colors.blue.700');
@@ -36,7 +36,7 @@
 
   &.dark {
     --Table-container-bg: theme('colors.truegray.900');
-    --Table-alternate-row-bg: theme('colors.darker');
+    --Table-alternate-row-bg: #121212;
   }
 
   // Link
@@ -61,12 +61,12 @@
   }
 
   // PageDrawer
-  --PageDrawer-content-bg: theme('colors.primary');
-  --PageDrawer-bottom-bg: theme('colors.primary');
+  --PageDrawer-content-bg: #0C4076;
+  --PageDrawer-bottom-bg: #0C4076;
 
   &.dark {
-    --PageDrawer-content-bg: theme('colors.primary');
-    --PageDrawer-bottom-bg: theme('colors.primary');
+    --PageDrawer-content-bg: #0C4076;
+    --PageDrawer-bottom-bg: #0C4076;
   }
 
   // Navigation
