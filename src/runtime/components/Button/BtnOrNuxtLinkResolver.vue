@@ -9,7 +9,8 @@ import { computedEager } from '@vueuse/core'
 import { useRoute } from '#imports'
 
 // Types
-import type { IBtnNavigationProps } from '../Button/types/btn-props.type.ts'
+// eslint-disable-next-line import/order
+import type { IBtnNavigationProps } from '../Button/types/btn-props.type'
 
 const props = defineProps<IBtnNavigationProps>()
 

@@ -1,0 +1,70 @@
+@import './perfect-scrollbar.css';
+
+$baseFontSize: 16px;
+
+html {
+  font-size: $baseFontSize;
+  overflow-x: visible;
+}
+
+html,
+body,
+#__nuxt {
+  --apply: fit m-0 p-0;
+
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+  font-weight: 500;
+}
+
+html.light {
+  --apply: bg-primary;
+
+  .page-wrapper {
+    --apply: bg-white
+  }
+}
+
+html.dark {
+  --apply: bg-primary color-white;
+
+  .page-wrapper {
+    --apply: bg-darker
+  }
+}
+
+input {
+  --apply: min-w-10;
+}
+
+.fuse-highlighted {
+  --apply: bg-primary/10 color-primary;
+}
+
+.item--active {
+  .fuse-highlighted {
+    --apply: dark:color-purple color-indigo-700;
+  }
+}
+
+.brand-fill {
+  --apply: fill-primary;
+}
+
+.white-fill {
+  --apply: fill-white;
+}
+
+// input:autofill,
+// input:-webkit-autofill {
+//   --apply: rounded-inherit;
+// }
+
+a.router-link-active {
+  // Project specific
+  --apply: color-primary dark:color-tertiary;
+}
+
+.link {
+  --apply: underline hover:color-$Link-hover-color cursor-pointer;
+}

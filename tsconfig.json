@@ -1,3 +1,23 @@
 {
-  "extends": "./.nuxt/tsconfig.json"
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".", // Required for path aliases (nuxt module)
+    "baseUrl": ".", // Required for path aliases (nuxt module)
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export (nuxt module)
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext", "dom"],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "types": [
+      "node"
+    ],
+    "noUnusedLocals": true
+  }
 }
