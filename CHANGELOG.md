@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.4
+
+[compare changes](https://github.com/Kylyi/ikymat-ui/compare/v1.0.3...v1.0.4)
+
+### 🩹 Fixes
+
+- Npm publish problem ([958bded](https://github.com/Kylyi/ikymat-ui/commit/958bded))
+
+### ❤️ Contributors
+
+- Ahmed Taha <ahmadhamidty@gmail.com>
+
 ## v1.0.3
 
 [compare changes](https://github.com/Kylyi/ikymat-ui/compare/v1.0.2...v1.0.3)
