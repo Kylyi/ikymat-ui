@@ -4,6 +4,8 @@ import {
   createResolver,
   installModule,
   addComponentsDir,
+  addComponent,
+  addImports,
 } from "@nuxt/kit";
 
 // Module options TypeScript interface definition
@@ -39,6 +41,26 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolver.resolve(runtimeDir, "components"),
       watch: false,
     });
+
+    addComponent({
+      name: "Btn", // name of the component to be used in vue templates
+      filePath: resolver.resolve("./runtime/components/Button/Btn.vue"),
+    });
+
+    // List of used CSS|SCSS globaly
+    nuxt.options.css = [
+      resolver.resolve("./runtime/assets/styles/breakpoints.scss"),
+      resolver.resolve("./runtime/assets/styles/colors.scss"),
+      resolver.resolve("./runtime/assets/styles/main.scss"),
+      resolver.resolve("./runtime/assets/styles/perfect-scrollbar.css"),
+      resolver.resolve("./runtime/assets/styles/reset.scss"),
+      resolver.resolve("./runtime/assets/styles/ripple.scss"),
+      resolver.resolve("./runtime/assets/styles/table.scss"),
+      resolver.resolve("./runtime/assets/styles/theme.scss"),
+      resolver.resolve("./runtime/assets/styles/transitions.scss"),
+      resolver.resolve("./runtime/assets/styles/typography.scss"),
+      resolver.resolve("./runtime/assets/styles/zindex.scss"),
+    ];
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     //addPlugin(resolver.resolve("./runtime/plugin"));
