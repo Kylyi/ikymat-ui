@@ -1,6 +1,6 @@
 {
   "name": "ikymat-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Nuxt UI library",
   "repository": "https://github.com/Kylyi/ikymat-ui",
   "license": "MIT",
@@ -52,6 +52,7 @@
     "@nuxt/test-utils": "^3.7.3",
     "@types/node": "^18.17.17",
     "changelogen": "^0.5.5",
+    "dayjs": "^1.11.10",
     "eslint": "^8.49.0",
     "nuxt": "^3.7.3",
     "prettier": "^3.0.3",
