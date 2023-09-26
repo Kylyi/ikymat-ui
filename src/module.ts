@@ -11,7 +11,7 @@ export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'ikymat-ui',
+    name: 'ikymat-ui-test',
     version: '1.0.0',
     configKey: 'ikymat-ui',
     compatibility: {
@@ -30,6 +30,8 @@ export default defineNuxtModule<ModuleOptions>({
 
     // Transpile runtime
     const runtimeDir = resolver.resolve('./runtime')
+    const isDevelopment =
+      runtimeDir.endsWith('src/runtime') || runtimeDir.endsWith('src\\runtime')
 
     // Modules
     await installModule('@unocss/nuxt')
@@ -47,18 +49,19 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // List of used CSS|SCSS globaly
+    const extension = isDevelopment ? 'scss' : 'css'
     nuxt.options.css = [
-      resolver.resolve('./runtime/assets/styles/breakpoints.scss'),
-      resolver.resolve('./runtime/assets/styles/colors.scss'),
-      resolver.resolve('./runtime/assets/styles/main.scss'),
+      resolver.resolve(`./runtime/assets/styles/breakpoints.${extension}`),
+      resolver.resolve(`./runtime/assets/styles/colors.${extension}`),
+      resolver.resolve(`./runtime/assets/styles/main.${extension}`),
       resolver.resolve('./runtime/assets/styles/perfect-scrollbar.css'),
-      resolver.resolve('./runtime/assets/styles/reset.scss'),
-      resolver.resolve('./runtime/assets/styles/ripple.scss'),
-      resolver.resolve('./runtime/assets/styles/table.scss'),
-      resolver.resolve('./runtime/assets/styles/theme.scss'),
-      resolver.resolve('./runtime/assets/styles/transitions.scss'),
-      resolver.resolve('./runtime/assets/styles/typography.scss'),
-      resolver.resolve('./runtime/assets/styles/zindex.scss'),
+      resolver.resolve(`./runtime/assets/styles/reset.${extension}`),
+      resolver.resolve(`./runtime/assets/styles/ripple.${extension}`),
+      resolver.resolve(`./runtime/assets/styles/table.${extension}`),
+      resolver.resolve(`./runtime/assets/styles/theme.${extension}`),
+      resolver.resolve(`./runtime/assets/styles/transitions.${extension}`),
+      resolver.resolve(`./runtime/assets/styles/typography.${extension}`),
+      resolver.resolve(`./runtime/assets/styles/zindex.${extension}`),
     ]
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
