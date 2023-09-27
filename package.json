@@ -1,6 +1,6 @@
 {
   "name": "ikymat-ui-test",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Nuxt UI library",
   "repository": "https://github.com/Kylyi/ikymat-ui",
   "license": "MIT",
@@ -15,7 +15,8 @@
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "data"
   ],
   "scripts": {
     "prepack": "nuxt-module-build",
@@ -42,7 +43,8 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "sass": "^1.68.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "unocss": "^0.56.4"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
