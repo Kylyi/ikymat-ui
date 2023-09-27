@@ -27,6 +27,7 @@ export default defineNuxtModule<ModuleOptions>({
   // Shorthand sugar to register Nuxt hooks
   hooks: {},
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
@@ -36,9 +37,9 @@ export default defineNuxtModule<ModuleOptions>({
       runtimeDir.endsWith('src/runtime') || runtimeDir.endsWith('src\\runtime')
 
     // Modules
-    if (!options.dev) {
-      nuxt.options.unocss = extendUnocssOptions(nuxt.options.unocss)
-    }
+    // if (!options.dev) {
+    nuxt.options.unocss = extendUnocssOptions(nuxt.options.unocss)
+    // }
     await installModule('@unocss/nuxt')
     await installModule('@vueuse/nuxt')
 

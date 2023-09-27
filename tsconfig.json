@@ -9,15 +9,6 @@
     "lib": ["esnext", "dom"],
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "resolveJsonModule": true,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
-    "jsx": "preserve",
-    "types": [
-      "node"
-    ],
-    "noUnusedLocals": true
+    "resolveJsonModule": true // for purpose of using json files as modules
   }
 }

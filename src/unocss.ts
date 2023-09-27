@@ -17,8 +17,12 @@ import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 
 // BREAKPOINTS
 // import { BREAKPOINTS_PX } from './libs/App/constants/breakpoints.constant'
-export function extendUnocssOptions(): UnocssNuxtOptions {
+export function extendUnocssOptions(
+  user: UnocssNuxtOptions = {}
+): UnocssNuxtOptions {
   return {
+    ...user,
+    preflight: false,
     theme: {
       colors: {
         primary: '#0C4076',
